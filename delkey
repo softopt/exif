@@ -1,0 +1,15 @@
+if [ $# -eq 0 ]
+then
+    echo "Usage: delkey <keyword> {<file pattern=>}"
+    exit
+fi
+
+tag=$1
+files="."
+
+if [ $# -gt 1 ]
+then
+    files=$2
+fi
+
+exiftool -keywords-=$tag $files

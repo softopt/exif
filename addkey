@@ -1,0 +1,18 @@
+if [ $# -eq 0 ]
+then
+    echo "Usage: addkey <keyword> {<file pattern=>}"
+    exit
+fi
+
+echo $1
+echo $2
+
+tag=$1
+files="."
+
+if [ $# -gt 1 ]
+then
+    files=$2
+fi
+
+exiftool -keywords+="$tag" $files

@@ -1,0 +1,1 @@
+exiftool -d %Y%m%d_%H%M%S%%-02c.%%le "-filename<DateTimeOriginal" .
